@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Kembalian</title>
+    <style>
+        .container {
+            max-width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        input, button {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kalkulator Kembalian</h1>
+        <label for="barang">Barang:</label>
+        <input type="text" id="barang"><br>
+        <label for="uang">Jumlah Uang:</label>
+        <input type="number" id="uang"><br>
+        <button onclick="hitungKembalian()">Hitung Kembalian</button><br>
+        <div id="hasil"></div>
+    </div>
+
+    <script>
+        function hitungKembalian() {
+            var barang = document.getElementById("barang").value;
+            var uang = parseFloat(document.getElementById("uang").value);
+            var hasilDiv = document.getElementById("hasil");
+            
+            // Lakukan perhitungan kembalian
+            var kembalian = uang - parseFloat(barang);
+
+            // Tampilkan hasil
+            hasilDiv.innerHTML = "Kembalian yang harus diberikan: " + kembalian.toFixed(2);
+        }
+    </script>
+</body>
+</html>

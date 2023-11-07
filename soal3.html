@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengecekan Bilangan Ganjil/Genap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        input, button {
+            margin: 10px;
+        }
+
+        p {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pengecekan Bilangan Ganjil/Genap</h1>
+    <label for="inputNumber">Masukkan angka:</label>
+    <input type="number" id="inputNumber">
+    <button onclick="checkNumber()">Cek</button>
+    <p id="result"></p>
+
+    <script>
+        function checkNumber() {
+            var inputElement = document.getElementById("inputNumber");
+            var resultElement = document.getElementById("result");
+
+            var number = parseInt(inputElement.value);
+
+            if (isNaN(number)) {
+                resultElement.innerText = "Masukkan bukan angka!";
+            } else {
+                if (number % 2 === 0) {
+                    resultElement.innerText = "Angka " + number + " adalah bilangan genap.";
+                } else {
+                    resultElement.innerText = "Angka " + number + " adalah bilangan ganjil.";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
